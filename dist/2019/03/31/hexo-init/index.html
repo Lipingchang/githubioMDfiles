@@ -6,18 +6,28 @@
   
   <title>hexo init | Li~~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo 使用记录">
+  <meta name="description" content="Hexo init安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件  可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：   GitHub 配置随便配置 要先有个项目，项目名字必须是 用户名.githu">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo init">
 <meta property="og:url" content="http://yoursite.com/2019/03/31/hexo-init/index.html">
 <meta property="og:site_name" content="Li~~">
-<meta property="og:description" content="Hexo 使用记录">
+<meta property="og:description" content="Hexo init安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件  可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：   GitHub 配置随便配置 要先有个项目，项目名字必须是 用户名.githu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-31T06:07:23.818Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554030359304.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554020008257.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554020094936.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/path/to/image">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/hexo-experiences/PL01.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554021044613.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554021244098.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554021512389.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554030019028.png">
+<meta property="og:updated_time" content="2019-03-31T11:37:45.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo init">
-<meta name="twitter:description" content="Hexo 使用记录">
+<meta name="twitter:description" content="Hexo init安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件  可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：   GitHub 配置随便配置 要先有个项目，项目名字必须是 用户名.githu">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/31/hexo-init/1554030359304.png">
   
     <link rel="alternative" href="/atom.xml" title="Li~~" type="application/atom+xml">
   
@@ -91,12 +101,91 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hexo-使用记录"><a href="#Hexo-使用记录" class="headerlink" title="Hexo 使用记录"></a>Hexo 使用记录</h1>
+        <h1 id="Hexo-init"><a href="#Hexo-init" class="headerlink" title="Hexo init"></a>Hexo init</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>用npm安装hexo-cli</p>
+<p><code>npm install hexo-cli -g</code></p>
+<p>然后找个目录初始化项目结构：</p>
+<p><code>hexo init</code></p>
+<p>最后</p>
+<p><code>hexo g</code> 用来把md文件转换成html文件</p>
+<blockquote>
+<p>可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：</p>
+<p><img src="/2019/03/31/hexo-init/1554030359304.png" alt="1554030359304"></p>
+</blockquote>
+<h3 id="GitHub-配置"><a href="#GitHub-配置" class="headerlink" title="GitHub 配置"></a>GitHub 配置</h3><h4 id="随便配置"><a href="#随便配置" class="headerlink" title="随便配置"></a>随便配置</h4><ul>
+<li>要先有个项目，项目名字必须是 <code>用户名.github.io</code></li>
+<li>在项目的settings里面 GitHub Pages 中配置</li>
+<li>最后把hexo g生成的文件push到这个项目中</li>
+</ul>
+<h4 id="使用-git-subtree"><a href="#使用-git-subtree" class="headerlink" title="使用 git subtree"></a>使用 git subtree</h4><p>username.github.io 要求该仓库的根目录必须是网站的更目录。为了方便管理，就要把hexo的src和dist分成两个仓库。</p>
+<ul>
+<li><p>建两个仓库：A - hexo的主目录；B - hexo的dist，就是叫做username.github.io的那个。</p>
+</li>
+<li><p>在本地仓库A中，添加一个B的远程别名：</p>
+<p><code>git remote add sub_origin https://github.com/username/username.github.io</code></p>
+</li>
+<li><p>如果<strong>远程仓库是空的</strong>话，就可以直接<code>hexo g</code>后把dist中的内容push到sub_origin中：</p>
+<p><code>git subtree push --prefix dist(生成目录的名字) sub_origin master</code></p>
+<p><strong>不是空的</strong>：</p>
+<p><code>git subtree pull --prefix dist sub_origin master</code>然后再<code>hexo g</code>覆盖掉之前的内容，再push。</p>
+</li>
+</ul>
+<p>因为 B 是 A 中的子项目，所以要在A中把dist文件夹中的内容都commit后，才能让子项目识别到这内容。</p>
+<h4 id="更加简单"><a href="#更加简单" class="headerlink" title="更加简单"></a>更加简单</h4><p>配置hexo配置文件中的deploy属性。</p>
+<h3 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h3><h4 id="平常方法"><a href="#平常方法" class="headerlink" title="平常方法"></a>平常方法</h4><p>要先装个 <code>npm install hexo-asset-image --save</code>  使得hexo可以识别出md中有关图片的语句。</p>
+<p>下面几种方法可以让hexo引用你放在文件夹中的图片：</p>
+<blockquote>
+<ul>
+<li><p><strong>所有的图片在同一个文件夹下</strong>    （方法一）</p>
+<p>在source目录下建立文件夹（名字自己起）就是专门拿来放图片的；</p>
+<p>使用的时候用 <code>![](/image_folder_name/image.jpg)</code>就可以引用了。</p>
+</li>
+<li><p><strong>图片按照文章（post）组织</strong>    （方法二）</p>
+<p>把 _config.yml 中的 post_asset_folder 设置为 true：<img src="/2019/03/31/hexo-init/1554020008257.png" alt="1554020008257"></p>
+<p><code>这会让hexo new &quot;title&quot;</code>的时候在_posts文件夹中同时创建md文件和同名的文件夹：<img src="/2019/03/31/hexo-init/1554020094936.png" alt="1554020094936"></p>
+<p>那么在使用图片的时候就直接用 <code>![](image.jpg)</code> 来连接这个图片</p>
+</li>
+<li><p><strong>用网络图床啥的</strong></p>
+<p>不提</p>
+</li>
+<li><p><strong>其他语法</strong></p>
+<p>// 语法</p>
+<img src="/2019/03/31/hexo-init/path/to/image" class="[class names]" title="[width] [height] [title text [alt text]]">
+<p>// 实例</p>
+<img src="/2019/03/31/hexo-init/hexo-experiences/PL01.jpg" class="full-image" width="180" height="180" title="hello">
+<p>// 生成的代码</p>
+<p><code>&lt;img src=&quot;/blog/hexo-experiences/PL01.jpg&quot; class=&quot;full-image&quot; width=&quot;180&quot; height=&quot;180&quot; title=&quot;hello&quot;&gt;</code></p>
+</li>
+</ul>
+<p><a href="http://www.mashangxue123.com/Hexo/1322489026.html#2-hexo-fang-shi-post-asset-folder" target="_blank" rel="noopener">Hexo 插入图片的几种方法</a></p>
+<p><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="noopener">Hexo博客搭建之在文章中插入图片</a></p>
+</blockquote>
+<h4 id="编辑器中的方法"><a href="#编辑器中的方法" class="headerlink" title="编辑器中的方法"></a>编辑器中的方法</h4><p>我用的是 Typora 编辑器，截图用的是 Evernote 的快捷键，用微信的截图也可以，都可以从剪贴板Ctrl+v 导入到编辑器中，所以要配置其他的选项使得：Typora 导入图片的时候会把图片到入到上面几个方法的文件夹中。</p>
+<ul>
+<li><p>首先配置编辑器中的“偏好设置”，”优先使用相对路径“：</p>
+<p><img src="/2019/03/31/hexo-init/1554021044613.png" alt="1554021044613"></p>
+</li>
+<li><p>然后在文章头部的 <code>YAML Front Matter</code> 中配置这篇文章的图片复制的路径：</p>
+<p>typora-root-url: xxx</p>
+<p>typora-copy-image-to: xxxx</p>
+<p><img src="/2019/03/31/hexo-init/1554021244098.png" alt="1554021244098"></p>
+<p>就会让所有复制进 这篇文章的图片 都放到该目录下面（上图中的配置是给方法二用的）</p>
+<p>方法一的可以写下面这个（没试过）：</p>
+<p><img src="/2019/03/31/hexo-init/1554021512389.png" alt="1554021512389"></p>
+</li>
+</ul>
+<p>最后是把 typora-root-url 和 typora-copy-image-to 两个属性放到模板文件中：</p>
+<p>hexo_root\scaffolds\post.md：</p>
+<p><img src="/2019/03/31/hexo-init/1554030019028.png" alt="1554030019028"></p>
+<p>这个模板会在每次hexo new的时候创建</p>
+<blockquote>
+<p><a href="https://www.anynote.me/1036055241.html" target="_blank" rel="noopener">使用 Typora 在 Hexo 中写博客完美处理本地图片</a></p>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/03/31/hexo-init/" data-id="cjtwiw3i80000donem3mvxnex" class="article-share-link" data-share="baidu" data-title="hexo init">Share</a>
+        <a data-url="http://yoursite.com/2019/03/31/hexo-init/" data-id="cjtwn0rbs0000qknelw8rsrt0" class="article-share-link" data-share="baidu" data-title="hexo init">Share</a>
       
 
       
