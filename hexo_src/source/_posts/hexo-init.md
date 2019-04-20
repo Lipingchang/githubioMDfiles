@@ -91,11 +91,11 @@ username.github.io 要求该仓库的根目录必须是网站的更目录。为�
 >
 >   // 语法
 >
->   {% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+>   `{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}`
 >
 >   // 实例
 >
->   {% img full-image /hexo-experiences/PL01.jpg 180 180 hello %}
+>   `{% img full-image /hexo-experiences/PL01.jpg 180 180 hello %}`
 >
 >   // 生成的代码
 >
