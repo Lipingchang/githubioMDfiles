@@ -6,27 +6,25 @@
   
   <title>hexo init | Li~~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo init安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件  可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：   GitHub 配置随便配置 要先有个项目，项目名字必须是 用户名.githu">
+  <meta name="description" content="Hexo init  NOTE： hexo new “文章标题” hexo g git push 上传md文件 git subtree push -P dist sub_origin master  上传网页   安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo init">
 <meta property="og:url" content="http://yoursite.com/2019/03/31/hexo-init/index.html">
 <meta property="og:site_name" content="Li~~">
-<meta property="og:description" content="Hexo init安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件  可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：   GitHub 配置随便配置 要先有个项目，项目名字必须是 用户名.githu">
+<meta property="og:description" content="Hexo init  NOTE： hexo new “文章标题” hexo g git push 上传md文件 git subtree push -P dist sub_origin master  上传网页   安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554030359304.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554020008257.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554020094936.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/path/to/image">
-<meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/hexo-experiences/PL01.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554021044613.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554021244098.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554021512389.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/hexo-init/1554030019028.png">
-<meta property="og:updated_time" content="2019-04-05T01:39:58.636Z">
+<meta property="og:updated_time" content="2019-04-20T03:28:43.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo init">
-<meta name="twitter:description" content="Hexo init安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件  可在配置文件_config.yml中找到：public_dir 这个字段，然后可以设置生成的html文件的路径：   GitHub 配置随便配置 要先有个项目，项目名字必须是 用户名.githu">
+<meta name="twitter:description" content="Hexo init  NOTE： hexo new “文章标题” hexo g git push 上传md文件 git subtree push -P dist sub_origin master  上传网页   安装用npm安装hexo-cli npm install hexo-cli -g 然后找个目录初始化项目结构： hexo init 最后 hexo g 用来把md文件转换成html文件">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/31/hexo-init/1554030359304.png">
   
     <link rel="alternative" href="/atom.xml" title="Li~~" type="application/atom+xml">
@@ -101,7 +99,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hexo-init"><a href="#Hexo-init" class="headerlink" title="Hexo init"></a>Hexo init</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>用npm安装hexo-cli</p>
+        <h1 id="Hexo-init"><a href="#Hexo-init" class="headerlink" title="Hexo init"></a>Hexo init</h1><hr>
+<blockquote>
+<p><strong>NOTE</strong>：</p>
+<p>hexo new “文章标题”</p>
+<p>hexo g</p>
+<p>git push 上传md文件</p>
+<p>git subtree push -P dist sub_origin master  上传网页</p>
+</blockquote>
+<hr>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>用npm安装hexo-cli</p>
 <p><code>npm install hexo-cli -g</code></p>
 <p>然后找个目录初始化项目结构：</p>
 <p><code>hexo init</code></p>
@@ -131,31 +138,37 @@
 </ul>
 <p>因为 B 是 A 中的子项目，所以要在A中把dist文件夹中的内容都commit后，才能让子项目识别到这内容。</p>
 <h4 id="更加简单"><a href="#更加简单" class="headerlink" title="更加简单"></a>更加简单</h4><p>配置hexo配置文件中的deploy属性。</p>
+<p>。。。。。。。</p>
+<blockquote>
+<p><a href="https://hisoka0917.github.io/git/2018/04/23/add-exist-repo-as-subtree/" target="_blank" rel="noopener">添加现有的repo为Git Subtree</a></p>
+</blockquote>
 <h3 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h3><h4 id="平常方法"><a href="#平常方法" class="headerlink" title="平常方法"></a>平常方法</h4><p>要先装个 <code>npm install hexo-asset-image --save</code>  使得hexo可以识别出md中有关图片的语句。</p>
 <p>下面几种方法可以让hexo引用你放在文件夹中的图片：</p>
 <blockquote>
 <ul>
-<li><p><strong>所有的图片在同一个文件夹下</strong>    （方法一）</p>
+<li><strong>所有的图片在同一个文件夹下</strong>    （方法一）</li>
+</ul>
 <p>在source目录下建立文件夹（名字自己起）就是专门拿来放图片的；</p>
 <p>使用的时候用 <code>![](/image_folder_name/image.jpg)</code>就可以引用了。</p>
-</li>
-<li><p><strong>图片按照文章（post）组织</strong>    （方法二）</p>
+<ul>
+<li><strong>图片按照文章（post）组织</strong>    （方法二）</li>
+</ul>
 <p>把 _config.yml 中的 post_asset_folder 设置为 true：<img src="/2019/03/31/hexo-init/1554020008257.png" alt="1554020008257"></p>
 <p><code>这会让hexo new &quot;title&quot;</code>的时候在_posts文件夹中同时创建md文件和同名的文件夹：<img src="/2019/03/31/hexo-init/1554020094936.png" alt="1554020094936"></p>
 <p>那么在使用图片的时候就直接用 <code>![](image.jpg)</code> 来连接这个图片</p>
-</li>
-<li><p><strong>用网络图床啥的</strong></p>
+<ul>
+<li><strong>用网络图床啥的</strong></li>
+</ul>
 <p>不提</p>
-</li>
-<li><p><strong>其他语法</strong></p>
+<ul>
+<li><strong>其他语法</strong></li>
+</ul>
 <p>// 语法</p>
-<img src="/2019/03/31/hexo-init/path/to/image" class="[class names]" title="[width] [height] [title text [alt text]]">
+<p>&#123;%img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125;</p>
 <p>// 实例</p>
-<img src="/2019/03/31/hexo-init/hexo-experiences/PL01.jpg" class="full-image" width="180" height="180" title="hello">
+<p>&#123;% img full-image /hexo-experiences/PL01.jpg 180 180 hello %\&#125;</p>
 <p>// 生成的代码</p>
 <p><code>&lt;img src=&quot;/blog/hexo-experiences/PL01.jpg&quot; class=&quot;full-image&quot; width=&quot;180&quot; height=&quot;180&quot; title=&quot;hello&quot;&gt;</code></p>
-</li>
-</ul>
 <p><a href="http://www.mashangxue123.com/Hexo/1322489026.html#2-hexo-fang-shi-post-asset-folder" target="_blank" rel="noopener">Hexo 插入图片的几种方法</a></p>
 <p><a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/" target="_blank" rel="noopener">Hexo博客搭建之在文章中插入图片</a></p>
 </blockquote>
@@ -185,7 +198,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/03/31/hexo-init/" data-id="cju3gt86o0001p0u202mf5wpt" class="article-share-link" data-share="baidu" data-title="hexo init">Share</a>
+        <a data-url="http://yoursite.com/2019/03/31/hexo-init/" data-id="cjuoyccu20003s4newnmrmsf8" class="article-share-link" data-share="baidu" data-title="hexo init">Share</a>
       
 
       
@@ -201,11 +214,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/04/05/flutter安装/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/31/rootme-bash-system1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          flutter安装
+          rootme-bash-system1
         
       </div>
     </a>
@@ -230,7 +243,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rootme/">rootme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rootme-pdf-read/">rootme-pdf-read</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -239,7 +252,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+      <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/rootme/" style="font-size: 10px;">rootme</a> <a href="/tags/rootme-pdf-read/" style="font-size: 10px;">rootme-pdf-read</a>
     </div>
   </div>
 
@@ -248,7 +261,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -260,11 +273,23 @@
       <ul>
         
           <li>
+            <a href="/2019/04/20/hexo-MEMO/">hexo-MEMO</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/20/看板娘/">看板娘</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/17/think-note/">think note</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/05/flutter安装/">flutter安装</a>
           </li>
         
           <li>
-            <a href="/2019/03/31/hexo-init/">hexo init</a>
+            <a href="/2019/03/31/rootme-bash-system1/">rootme-bash-system1</a>
           </li>
         
       </ul>
@@ -363,5 +388,5 @@ var duoshuoQuery = {short_name:"reqianduan"};
 <script src="/js/script.js"></script>
 
 </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"bottom","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
