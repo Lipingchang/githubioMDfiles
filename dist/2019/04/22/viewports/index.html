@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>viewports | Li~~</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="桌面浏览器上的viewport译：A tale of two viewports - part one 介绍viewpoints是啥，以及一些重要的页面元素（比如 &amp;lt;html&amp;gt; ，window，screen）的宽度（width）是怎么确定的** 首先会介绍有关桌面浏览器的相关术语，这会对之后讨论有关手机上的浏览器的相关知识有所帮助。 概念 : 设备像素 和 CSS像素设备像素就是屏幕的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="viewports">
+<meta property="og:url" content="http://yoursite.com/2019/04/22/viewports/index.html">
+<meta property="og:site_name" content="Li~~">
+<meta property="og:description" content="桌面浏览器上的viewport译：A tale of two viewports - part one 介绍viewpoints是啥，以及一些重要的页面元素（比如 &amp;lt;html&amp;gt; ，window，screen）的宽度（width）是怎么确定的** 首先会介绍有关桌面浏览器的相关术语，这会对之后讨论有关手机上的浏览器的相关知识有所帮助。 概念 : 设备像素 和 CSS像素设备像素就是屏幕的">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556260760807.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556261093189.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556261393708.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556265134351.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556265226573.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556265251836.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556343660364.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556345460234.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/22/viewports/1556345601159.png">
+<meta property="og:updated_time" content="2019-04-29T03:03:41.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="viewports">
+<meta name="twitter:description" content="桌面浏览器上的viewport译：A tale of two viewports - part one 介绍viewpoints是啥，以及一些重要的页面元素（比如 &amp;lt;html&amp;gt; ，window，screen）的宽度（width）是怎么确定的** 首先会介绍有关桌面浏览器的相关术语，这会对之后讨论有关手机上的浏览器的相关知识有所帮助。 概念 : 设备像素 和 CSS像素设备像素就是屏幕的">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/22/viewports/1556260760807.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Li~~" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head></html>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div id="logo-wrap">
+        <h1>Li~~</h1>
+        <a href="/" id="logo"></a>
+      </div>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value class="search-form-submit">
+          <input name="tn" type="hidden" value="bds">
+          <input name="cl" type="hidden" value="3">
+          <input name="ct" type="hidden" value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-viewports" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/22/viewports/" class="article-date">
+  <time datetime="2019-04-22T09:27:38.000Z" itemprop="datePublished">2019-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      viewports
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="桌面浏览器上的viewport"><a href="#桌面浏览器上的viewport" class="headerlink" title="桌面浏览器上的viewport"></a>桌面浏览器上的viewport</h1><p>译：<a href="https://www.quirksmode.org/mobile/viewports.html" target="_blank" rel="noopener">A tale of two viewports - part one</a></p>
+<p>介绍viewpoints是啥，以及一些重要的页面元素（比如 <code>&lt;html&gt;</code> ，window，screen）的宽度（width）是怎么确定的**</p>
+<p>首先会介绍有关桌面浏览器的相关术语，这会对之后讨论有关手机上的浏览器的相关知识有所帮助。</p>
+<h1 id="概念-设备像素-和-CSS像素"><a href="#概念-设备像素-和-CSS像素" class="headerlink" title="概念 : 设备像素 和 CSS像素"></a>概念 : 设备像素 和 CSS像素</h1><p>设备像素就是屏幕的像素，通常是1080*1920。</p>
+<p>CSS像素是浏览器中的像素，这个值会随着浏览器的缩放变动。</p>
+<p><img src="/2019/04/22/viewports/1556260760807.png" alt="1556260760807"></p>
+<p>放大10%之后，1.1个Device Pixel对应1个CSS像素，于是页面就变大。</p>
+<h3 id="获取像素的JS接口"><a href="#获取像素的JS接口" class="headerlink" title="获取像素的JS接口"></a>获取像素的JS接口</h3><p>screen对象可以获取 <strong>设备像素</strong></p>
+<p><code>screen.height</code> <code>screen.width</code></p>
+<p><img src="/2019/04/22/viewports/1556261093189.png" alt="1556261093189"></p>
+<p>window对象可以获取 <strong>CSS像素</strong></p>
+<p><code>window.innerHeight</code> <code>window.innerWidth</code></p>
+<p>在放大为200%之后，CSS像素就变成Device像素的一半了，outerWidth/Height 倒是和Device像素是一样的，不管怎么缩放浏览器，比例都是不变的。</p>
+<p><img src="/2019/04/22/viewports/1556261393708.png" alt="1556261393708"></p>
+<p>页面滚动的长度单位是CSS像素，所以不管页面怎么缩放，<code>window.pageOffset</code> 的值都是固定的。</p>
+<h1 id="概念：viewport"><a href="#概念：viewport" class="headerlink" title="概念：viewport"></a>概念：viewport</h1><p>viewport是用来约束（constrain）你的页面中最顶层的 <code>&lt;html</code> 元素的大小的。</p>
+<ul>
+<li><p>例子：</p>
+<p>你设计了一个可以自动调整大小的页面（liquid layout），页面中的侧边栏<code>width: 10%</code>，使得在浏览器窗口resize的时候，侧边栏的大小会自动的变动。</p>
+</li>
+</ul>
+<p>  具体原因是，这个侧边栏长度定制为其parent的10%，现在假定他的parent是<code>body</code>，并你没有给<code>body</code>标签设置width，那么<code>body</code>的长度是谁定的？</p>
+<p>  通常，所有块级元素都会占据其父亲的100%的width（虽然有例外，但是先不提），所以<code>body</code>和<code>html</code>的width是相等的。</p>
+<p>  最后是<code>html</code>元素的大小，他相等于浏览器窗口的width，所以你的侧边栏的width会随着浏览器窗口大小的变动而变动。</p>
+<p>  但是在理论/实现中（in theory）html和浏览器窗口中间还隔着一个viewport，<code>&lt;html&gt;</code>元素的width被viewport的width所限制。使得<code>&lt;html&gt;</code>元素占据了viewport的所有width。viewport的大小才是完全的等于浏览器的窗口大小：他就是被这样子定义的。但是viewport并不是HTML中的一个结构体，所以不能被CSS样式所影响。<strong>在桌面环境中，viewport的长宽和浏览器的大小是一样的，但是在手机上就会有点不同/复杂了。</strong></p>
+<h1 id="viewport的后果"><a href="#viewport的后果" class="headerlink" title="viewport的后果"></a>viewport的后果</h1><p>viewport在没有缩放的页面上工作的会挺好的，但是如果你的页面放大之后就会？？</p>
+<p>在100%缩放条件下，两个div是这样的：</p>
+<p><img src="/2019/04/22/viewports/1556265134351.png" alt="1556265134351"></p>
+<p>但是放大到200%的时候，固定长度的<code>1000px box</code>会比浏览器窗口的长度要长，就会顶开浏览器窗口，产生横向的滚动条；向右边滚动后，会发现<code>100%box</code>并没有填充到滚动条之外的区域。</p>
+<p><img src="/2019/04/22/viewports/1556265226573.png" alt="1556265226573"></p>
+<p><img src="/2019/04/22/viewports/1556265251836.png" alt="1556265251836"></p>
+<p>因为<code>100%box</code> 他的 (CSS像素长度) == (viewport的宽度) == (浏览器的宽度) ，使得他填满了viewport的长度，但是没有填满被<code>1000px box</code>顶开的长度。</p>
+<p>那么只要不要让滚动条出现，就不会让<code>100%box</code>露馅，之前我们知道<code>&lt;html&gt;</code>元素是和viewport一样大小的，那么只要让溢出html的元素都hidden就不会有滚动条出现了：<code>html {overflow: hidden;}</code>。</p>
+<h3 id="题外话-document-width"><a href="#题外话-document-width" class="headerlink" title="题外话 document width?"></a>题外话 document width?</h3><p>因为上面的问题，原作者想引入一种新的JS接口，可以获取这个页面的真正的长度，包括那些撑开页面大小的元素。（他说但是好像没有这种接口，虽然你可以自己去计算）</p>
+<p>但是这个会有问题的吧，就好像是生鸡生蛋的问题，一旦有元素用了这个属性，那么就意味着这个元素需要在所有元素（包括这个元素）渲染完成之后才可以渲染，那么，谁先渲染？？</p>
+<h1 id="viewport的测量-获取"><a href="#viewport的测量-获取" class="headerlink" title="viewport的测量/获取"></a>viewport的测量/获取</h1><p>可以用 <code>document.documentElement.clientWidth/Height</code> 来获取viewport的大小。</p>
+<p>在DOM中，<code>document.docuemntElement</code> 其实指的是<code>&lt;html&gt;</code> 元素，也就是HTML文档中的根元素，即使viewport是包裹了<code>&lt;html&gt;</code>的。</p>
+<p>即使你给<code>&lt;html&gt;</code>设置了width之后，使用 <code>document.documentElement.clientWidth/Height</code> 获取到的大小还是viewport的大小，而不是设置后<code>html</code>的大小。</p>
+<p><img src="/2019/04/22/viewports/1556343660364.png" alt="1556343660364"></p>
+<p>可以看到offsetWidth是设置的width的大小，而clientWidth不变，还是viewport的大小。</p>
+<p>所以<code>document.documentElement.clientWidth</code> 和<code>-Height</code> 总是给出viewport的尺寸，从而忽略掉 <code>&lt;html&gt;</code> 的尺寸。</p>
+<h2 id="两种获取方式"><a href="#两种获取方式" class="headerlink" title="两种获取方式"></a>两种获取方式</h2><p><code>window.innerWidth/Height</code> 和 <code>document.documentElement.clientWidth/Height</code> 之间的区别：</p>
+<p>是否 包括 <strong>下拉滑块</strong> 的宽度：</p>
+<p><img src="/2019/04/22/viewports/1556345460234.png" alt="1556345460234"></p>
+<p>在缩放为100%的情况下，下拉滑块 的宽为 17 CSS px，闲的无聊的，可以截图数一数（蓝色像素点）：</p>
+<p><img src="/2019/04/22/viewports/1556345601159.png" alt="1556345601159"></p>
+<p>造成有两个属性可以获取的重复情况是浏览器大战的历史遗留问题，网景只支持<code>window.innerWidth/Height</code>，IE只支持 <code>document.documentElement.clientWidth\Height</code>。后来大多数浏览器都支持了<code>clientWidth\Height</code>，但是IE还是不支持<code>innerWidth/Height</code>。</p>
+<p>虽然在桌面浏览器上这两个属性对有些迷惑，但是在手机上，还是挺有用的。</p>
+<h2 id="获取-lt-html-gt-的真实尺寸："><a href="#获取-lt-html-gt-的真实尺寸：" class="headerlink" title="获取&lt;html&gt;的真实尺寸："></a>获取<code>&lt;html&gt;</code>的真实尺寸：</h2><p> They’re stored in<code>document.documentElement.offsetWidth</code> and <code>-Height</code>.</p>
+<p>这两个属性才会被 css 的width和height影响。</p>
+<h1 id="事件的坐标"><a href="#事件的坐标" class="headerlink" title="事件的坐标"></a>事件的坐标</h1><p>鼠标事件 给出的坐标：</p>
+<ol>
+<li><code>pageX/Y</code> 在 <code>&lt;html&gt;</code>元素中的相对位置，以 CSS pixels 为单位。</li>
+<li><code>clientX/Y</code> 在  viewport （就是浏览器窗口中的绝对位置）中的相对位置，以 CSS pixels 为单位。</li>
+<li><code>screenX/Y</code> 在你的显示器中的位置，以 Device pixels为单位。</li>
+</ol>
+<h1 id="media-中的关键字"><a href="#media-中的关键字" class="headerlink" title="@media 中的关键字"></a>@media 中的关键字</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> all and (max-width: <span class="number">400px</span>) &#123;</span><br><span class="line">	// styles assigned when width is smaller than 400px;</span><br><span class="line">	<span class="selector-tag">div</span><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你的设备属于all，并且 尺寸不大于 400px的时候，就应用下面的css规则。</p>
+<p>这里的<code>max-width</code>指的是viewport还是screen呢？</p>
+<ol>
+<li><code>max/min-width/height</code> 的值和 <code>documentElement .clientWidth/Height</code> 中的值是一样的 (都指的是viewport)。所以单位是CSS Pixel。</li>
+<li><code>device-width/device-height</code> 的值和 <code>screen.width/height</code> 是一样的 (也就是显示屏的尺寸)。所以指的是Device Pixel。</li>
+</ol>
+<hr>
+<h1 id="手机浏览器上的viewport"><a href="#手机浏览器上的viewport" class="headerlink" title="手机浏览器上的viewport"></a>手机浏览器上的viewport</h1><p>译：<a href="https://www.quirksmode.org/mobile/viewports2.html" target="_blank" rel="noopener">A tale of two viewports - part two</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/04/22/viewports/" data-id="cjvnoh0ap000900neycnffqzi" class="article-share-link" data-share="baidu" data-title="viewports">Share</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/04/22/viewports/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/23/webpack-sb-problems/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          webpack sb problems
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/20/hexo-MEMO/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo-MEMO</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2019/04/22/viewports/" data-title="viewports" data-url="http://yoursite.com/2019/04/22/viewports/"></div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rootme/">rootme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rootme-pdf-read/">rootme-pdf-read</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/rootme/" style="font-size: 10px;">rootme</a> <a href="/tags/rootme-pdf-read/" style="font-size: 10px;">rootme-pdf-read</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/06/AboutSpring/">AboutSpring</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/webpack-sb-problems/">webpack sb problems</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/22/viewports/">viewports</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/20/hexo-MEMO/">hexo-MEMO</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/20/看板娘/">看板娘</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Li~~<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"reqianduan"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"bottom","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>

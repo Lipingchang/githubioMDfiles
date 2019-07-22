@@ -30,9 +30,10 @@
   <div id="banner"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Li~~</a>
-      </h1>
+      <div id="logo-wrap">
+        <h1>Li~~</h1>
+        <a href="/" id="logo"></a>
+      </div>
       
     </div>
     <div id="header-inner" class="inner">
@@ -66,6 +67,235 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-AboutSpring" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/06/AboutSpring/" class="article-date">
+  <time datetime="2019-05-06T12:57:00.000Z" itemprop="datePublished">2019-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/06/AboutSpring/">AboutSpring</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>DTD文件</strong></p>
+<p>用来定义一个xml文件中的<strong>标签</strong>有哪些，标签里面可以<strong>嵌套</strong>哪些其他的标签，以及标签的<strong>属性</strong>有哪些。</p>
+<p>可以在书写XML文件的时候给出提示，也可以用来解析文件啥的。</p>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="noopener">XML</a>文件的<strong>文档类型定义</strong>（Document Type Definition）可以看成一个或者多个XML文件的模板，在这里可以定义XML文件中的元素、元素的属性、元素的排列方式、元素包含的内容等等。</p>
+</blockquote>
+<p>由于DTD限制较多，使用时较不方便，近来已渐被<a href="https://zh.wikipedia.org/wiki/XML_Schema" target="_blank" rel="noopener">XML Schema</a>所取代。</p>
+<p><strong>XML Schema</strong>标准</p>
+<p>本身的意思是“XML文件的格式/模式”，人们广义上指的是用来 限制XML文件格式 的限制文件（<a href="https://zh.wikipedia.org/wiki/XML_Schema_%E8%AF%AD%E8%A8%80" target="_blank" rel="noopener">XML Schema 语言</a>，历史上有很多种语言/标准可以做这个事情，wiki里面有个表格)。</p>
+<p>但他也是一个<strong>标准的名字</strong>，“XML Schema”在2001年5月成为W3C推荐标准。由于“XML Schema”作为一种W3C的推荐标准的名字与广义的<a href="https://zh.wikipedia.org/wiki/XML_Schema_%E8%AF%AD%E8%A8%80" target="_blank" rel="noopener">XML Schema 语言</a>存在名称上的混淆，用户社区的一部分人采用了“WXS”来称呼它， 用户社区的另一部分人采用“<strong>XSD</strong>”（<strong>X</strong>ML <strong>S</strong>chema <strong>D</strong>efinition<a href="https://zh.wikipedia.org/wiki/%E9%A6%96%E5%AD%97%E6%AF%8D%E7%B8%AE%E7%95%A5%E5%AD%97" target="_blank" rel="noopener">首字母缩略字</a>）来称呼它。W3C发布的1.1标准采用了“<strong>XSD</strong>”作为官方称呼。</p>
+<p>当一个实例文档针对一个schema来验证有效性时（这一过程称为<em>assessment</em>），用来验证有效性的schema可以作为参数提供给验证器，也可以在实例文档中作为两种特殊属性之一直接提供：</p>
+<ul>
+<li><code>xsi:schemaLocation</code></li>
+<li><code>xsi:noNamespaceSchemaLocation</code></li>
+<li>这种机制要求客户启动验证以充分相信这个文档，知道文档对正确的schema是有效的。</li>
+</ul>
+<p>“xsi”是名字空间”<a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener">http://www.w3.org/2001/XMLSchema-instance</a>“的传统前缀。</p>
+<p><strong>XML 头的解释</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">            http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">           http://www.springframework.org/schema/context/spring-context-3.0.xsd"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>xmlns: <code>&lt;bean&gt;</code>标签的默认命名空间</p>
+<p>xmlns:xsi 使用URI<code>http://www.w3.org/2001/XMLSchema-instance</code>作为一个新的命名空间的ID，然后用<code>xsi</code>作为这个ID的别名。</p>
+<p>xmlns:context 也是声明一个新的叫 context 的命名空间，使用 <code>http://www.springframework.org/schema/context</code>作为该命名空间的唯一ID，context作为一个别名。</p>
+<p>xsi:schemaLocation 是一个xsi命名空间的属性，定义了该<code>&lt;bean&gt;</code>元素中 其他的命名空间的ID和xsd文件的对应关系（一个命名空间和他对应的标签编写规则）。这个属性的格式是多个 <code>ID-key xsd-file-URI</code>键值对，中间的分隔符可以是空格或者回车。</p>
+<p><em>最后，</em></p>
+<p><a href="https://stackoverflow.com/questions/34202967/xmlns-xmlnsxsi-xsischemalocation-and-targetnamespace" target="_blank" rel="noopener">https://stackoverflow.com/questions/34202967/xmlns-xmlnsxsi-xsischemalocation-and-targetnamespace</a></p>
+<p><a href="https://blog.csdn.net/lengxiao1993/article/details/77914155" target="_blank" rel="noopener">https://blog.csdn.net/lengxiao1993/article/details/77914155</a></p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><h4 id="ClassLoader"><a href="#ClassLoader" class="headerlink" title="ClassLoader"></a>ClassLoader</h4><h4 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h4><p><code>Aspect</code> 一个类，描述了需要横向插入系统的功能</p>
+<p><code>Joinpoint</code> 连接点，程序执行过程中，允许插入的点，就好像粒度的单位</p>
+<p><code>Advice</code> 增强处理/通知，就是Aspect中实现的方法，用于增强对象的方法</p>
+<p><code>Target Object</code> 需要被增强的对象</p>
+<p><code>Proxy</code> 被增强后的对象，通常是动态生成的</p>
+<p><code>Weaving</code> 生成代理对象的过程</p>
+<h4 id="Weaving-的两种方式"><a href="#Weaving-的两种方式" class="headerlink" title="Weaving 的两种方式"></a>Weaving 的两种方式</h4><p><strong>JDK动态代理</strong></p>
+<blockquote>
+<p>使用<code>Java.lang.reflect.Proxy</code>类实现，该类提供<code>newProxyInstance(classLoader,interface[],Proxy)</code>方法，可以通过传入的接口列表（interface[]），生成一个包含这些方法的对象。</p>
+</blockquote>
+<p>要对<code>对象A</code>进行代理，就要生成一个<code>对象ProxyA</code>，首先要</p>
+<p><strong>CGLIB代理</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/05/06/AboutSpring/" data-id="cjvnoh0a2000000nelr5gsb65" class="article-share-link" data-share="baidu" data-title="AboutSpring">Share</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/05/06/AboutSpring/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webpack-sb-problems" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/23/webpack-sb-problems/" class="article-date">
+  <time datetime="2019-04-23T06:57:50.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/23/webpack-sb-problems/">webpack sb problems</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/04/23/webpack-sb-problems/" data-id="cjvnoh0aw000c00netsn6dtlk" class="article-share-link" data-share="baidu" data-title="webpack sb problems">Share</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/04/23/webpack-sb-problems/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-viewports" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/22/viewports/" class="article-date">
+  <time datetime="2019-04-22T09:27:38.000Z" itemprop="datePublished">2019-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/viewports/">viewports</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="桌面浏览器上的viewport"><a href="#桌面浏览器上的viewport" class="headerlink" title="桌面浏览器上的viewport"></a>桌面浏览器上的viewport</h1><p>译：<a href="https://www.quirksmode.org/mobile/viewports.html" target="_blank" rel="noopener">A tale of two viewports - part one</a></p>
+<p>介绍viewpoints是啥，以及一些重要的页面元素（比如 <code>&lt;html&gt;</code> ，window，screen）的宽度（width）是怎么确定的**</p>
+<p>首先会介绍有关桌面浏览器的相关术语，这会对之后讨论有关手机上的浏览器的相关知识有所帮助。</p>
+<h1 id="概念-设备像素-和-CSS像素"><a href="#概念-设备像素-和-CSS像素" class="headerlink" title="概念 : 设备像素 和 CSS像素"></a>概念 : 设备像素 和 CSS像素</h1><p>设备像素就是屏幕的像素，通常是1080*1920。</p>
+<p>CSS像素是浏览器中的像素，这个值会随着浏览器的缩放变动。</p>
+<p><img src="/2019/04/22/viewports/1556260760807.png" alt="1556260760807"></p>
+<p>放大10%之后，1.1个Device Pixel对应1个CSS像素，于是页面就变大。</p>
+<h3 id="获取像素的JS接口"><a href="#获取像素的JS接口" class="headerlink" title="获取像素的JS接口"></a>获取像素的JS接口</h3><p>screen对象可以获取 <strong>设备像素</strong></p>
+<p><code>screen.height</code> <code>screen.width</code></p>
+<p><img src="/2019/04/22/viewports/1556261093189.png" alt="1556261093189"></p>
+<p>window对象可以获取 <strong>CSS像素</strong></p>
+<p><code>window.innerHeight</code> <code>window.innerWidth</code></p>
+<p>在放大为200%之后，CSS像素就变成Device像素的一半了，outerWidth/Height 倒是和Device像素是一样的，不管怎么缩放浏览器，比例都是不变的。</p>
+<p><img src="/2019/04/22/viewports/1556261393708.png" alt="1556261393708"></p>
+<p>页面滚动的长度单位是CSS像素，所以不管页面怎么缩放，<code>window.pageOffset</code> 的值都是固定的。</p>
+<h1 id="概念：viewport"><a href="#概念：viewport" class="headerlink" title="概念：viewport"></a>概念：viewport</h1><p>viewport是用来约束（constrain）你的页面中最顶层的 <code>&lt;html</code> 元素的大小的。</p>
+<ul>
+<li><p>例子：</p>
+<p>你设计了一个可以自动调整大小的页面（liquid layout），页面中的侧边栏<code>width: 10%</code>，使得在浏览器窗口resize的时候，侧边栏的大小会自动的变动。</p>
+</li>
+</ul>
+<p>  具体原因是，这个侧边栏长度定制为其parent的10%，现在假定他的parent是<code>body</code>，并你没有给<code>body</code>标签设置width，那么<code>body</code>的长度是谁定的？</p>
+<p>  通常，所有块级元素都会占据其父亲的100%的width（虽然有例外，但是先不提），所以<code>body</code>和<code>html</code>的width是相等的。</p>
+<p>  最后是<code>html</code>元素的大小，他相等于浏览器窗口的width，所以你的侧边栏的width会随着浏览器窗口大小的变动而变动。</p>
+<p>  但是在理论/实现中（in theory）html和浏览器窗口中间还隔着一个viewport，<code>&lt;html&gt;</code>元素的width被viewport的width所限制。使得<code>&lt;html&gt;</code>元素占据了viewport的所有width。viewport的大小才是完全的等于浏览器的窗口大小：他就是被这样子定义的。但是viewport并不是HTML中的一个结构体，所以不能被CSS样式所影响。<strong>在桌面环境中，viewport的长宽和浏览器的大小是一样的，但是在手机上就会有点不同/复杂了。</strong></p>
+<h1 id="viewport的后果"><a href="#viewport的后果" class="headerlink" title="viewport的后果"></a>viewport的后果</h1><p>viewport在没有缩放的页面上工作的会挺好的，但是如果你的页面放大之后就会？？</p>
+<p>在100%缩放条件下，两个div是这样的：</p>
+<p><img src="/2019/04/22/viewports/1556265134351.png" alt="1556265134351"></p>
+<p>但是放大到200%的时候，固定长度的<code>1000px box</code>会比浏览器窗口的长度要长，就会顶开浏览器窗口，产生横向的滚动条；向右边滚动后，会发现<code>100%box</code>并没有填充到滚动条之外的区域。</p>
+<p><img src="/2019/04/22/viewports/1556265226573.png" alt="1556265226573"></p>
+<p><img src="/2019/04/22/viewports/1556265251836.png" alt="1556265251836"></p>
+<p>因为<code>100%box</code> 他的 (CSS像素长度) == (viewport的宽度) == (浏览器的宽度) ，使得他填满了viewport的长度，但是没有填满被<code>1000px box</code>顶开的长度。</p>
+<p>那么只要不要让滚动条出现，就不会让<code>100%box</code>露馅，之前我们知道<code>&lt;html&gt;</code>元素是和viewport一样大小的，那么只要让溢出html的元素都hidden就不会有滚动条出现了：<code>html {overflow: hidden;}</code>。</p>
+<h3 id="题外话-document-width"><a href="#题外话-document-width" class="headerlink" title="题外话 document width?"></a>题外话 document width?</h3><p>因为上面的问题，原作者想引入一种新的JS接口，可以获取这个页面的真正的长度，包括那些撑开页面大小的元素。（他说但是好像没有这种接口，虽然你可以自己去计算）</p>
+<p>但是这个会有问题的吧，就好像是生鸡生蛋的问题，一旦有元素用了这个属性，那么就意味着这个元素需要在所有元素（包括这个元素）渲染完成之后才可以渲染，那么，谁先渲染？？</p>
+<h1 id="viewport的测量-获取"><a href="#viewport的测量-获取" class="headerlink" title="viewport的测量/获取"></a>viewport的测量/获取</h1><p>可以用 <code>document.documentElement.clientWidth/Height</code> 来获取viewport的大小。</p>
+<p>在DOM中，<code>document.docuemntElement</code> 其实指的是<code>&lt;html&gt;</code> 元素，也就是HTML文档中的根元素，即使viewport是包裹了<code>&lt;html&gt;</code>的。</p>
+<p>即使你给<code>&lt;html&gt;</code>设置了width之后，使用 <code>document.documentElement.clientWidth/Height</code> 获取到的大小还是viewport的大小，而不是设置后<code>html</code>的大小。</p>
+<p><img src="/2019/04/22/viewports/1556343660364.png" alt="1556343660364"></p>
+<p>可以看到offsetWidth是设置的width的大小，而clientWidth不变，还是viewport的大小。</p>
+<p>所以<code>document.documentElement.clientWidth</code> 和<code>-Height</code> 总是给出viewport的尺寸，从而忽略掉 <code>&lt;html&gt;</code> 的尺寸。</p>
+<h2 id="两种获取方式"><a href="#两种获取方式" class="headerlink" title="两种获取方式"></a>两种获取方式</h2><p><code>window.innerWidth/Height</code> 和 <code>document.documentElement.clientWidth/Height</code> 之间的区别：</p>
+<p>是否 包括 <strong>下拉滑块</strong> 的宽度：</p>
+<p><img src="/2019/04/22/viewports/1556345460234.png" alt="1556345460234"></p>
+<p>在缩放为100%的情况下，下拉滑块 的宽为 17 CSS px，闲的无聊的，可以截图数一数（蓝色像素点）：</p>
+<p><img src="/2019/04/22/viewports/1556345601159.png" alt="1556345601159"></p>
+<p>造成有两个属性可以获取的重复情况是浏览器大战的历史遗留问题，网景只支持<code>window.innerWidth/Height</code>，IE只支持 <code>document.documentElement.clientWidth\Height</code>。后来大多数浏览器都支持了<code>clientWidth\Height</code>，但是IE还是不支持<code>innerWidth/Height</code>。</p>
+<p>虽然在桌面浏览器上这两个属性对有些迷惑，但是在手机上，还是挺有用的。</p>
+<h2 id="获取-lt-html-gt-的真实尺寸："><a href="#获取-lt-html-gt-的真实尺寸：" class="headerlink" title="获取&lt;html&gt;的真实尺寸："></a>获取<code>&lt;html&gt;</code>的真实尺寸：</h2><p> They’re stored in<code>document.documentElement.offsetWidth</code> and <code>-Height</code>.</p>
+<p>这两个属性才会被 css 的width和height影响。</p>
+<h1 id="事件的坐标"><a href="#事件的坐标" class="headerlink" title="事件的坐标"></a>事件的坐标</h1><p>鼠标事件 给出的坐标：</p>
+<ol>
+<li><code>pageX/Y</code> 在 <code>&lt;html&gt;</code>元素中的相对位置，以 CSS pixels 为单位。</li>
+<li><code>clientX/Y</code> 在  viewport （就是浏览器窗口中的绝对位置）中的相对位置，以 CSS pixels 为单位。</li>
+<li><code>screenX/Y</code> 在你的显示器中的位置，以 Device pixels为单位。</li>
+</ol>
+<h1 id="media-中的关键字"><a href="#media-中的关键字" class="headerlink" title="@media 中的关键字"></a>@media 中的关键字</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> all and (max-width: <span class="number">400px</span>) &#123;</span><br><span class="line">	// styles assigned when width is smaller than 400px;</span><br><span class="line">	<span class="selector-tag">div</span><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你的设备属于all，并且 尺寸不大于 400px的时候，就应用下面的css规则。</p>
+<p>这里的<code>max-width</code>指的是viewport还是screen呢？</p>
+<ol>
+<li><code>max/min-width/height</code> 的值和 <code>documentElement .clientWidth/Height</code> 中的值是一样的 (都指的是viewport)。所以单位是CSS Pixel。</li>
+<li><code>device-width/device-height</code> 的值和 <code>screen.width/height</code> 是一样的 (也就是显示屏的尺寸)。所以指的是Device Pixel。</li>
+</ol>
+<hr>
+<h1 id="手机浏览器上的viewport"><a href="#手机浏览器上的viewport" class="headerlink" title="手机浏览器上的viewport"></a>手机浏览器上的viewport</h1><p>译：<a href="https://www.quirksmode.org/mobile/viewports2.html" target="_blank" rel="noopener">A tale of two viewports - part two</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/04/22/viewports/" data-id="cjvnoh0ap000900neycnffqzi" class="article-share-link" data-share="baidu" data-title="viewports">Share</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/04/22/viewports/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo-MEMO" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/20/hexo-MEMO/" class="article-date">
@@ -96,7 +326,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/04/20/hexo-MEMO/" data-id="cjuoycctw0001s4ne0ekonrip" class="article-share-link" data-share="baidu" data-title="hexo-MEMO">Share</a>
+        <a data-url="http://yoursite.com/2019/04/20/hexo-MEMO/" data-id="cjvnoh0a8000100nehrj5ce1d" class="article-share-link" data-share="baidu" data-title="hexo-MEMO">Share</a>
       
 
       
@@ -140,12 +370,26 @@
 <p>配置文件增加：_config.xml</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  scriptFrom:</span> <span class="string">local</span></span><br><span class="line"><span class="attr">  pluginRootPath:</span> <span class="string">live2dw/</span></span><br><span class="line"><span class="attr">  pluginJsPath:</span> <span class="string">lib/</span></span><br><span class="line"><span class="attr">  pluginModelPath:</span> <span class="string">assets/</span></span><br><span class="line"><span class="attr">  tagMode:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  debug:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  model:</span></span><br><span class="line"><span class="attr">    use:</span> <span class="string">live2d-widget-model-wanko</span></span><br><span class="line"><span class="attr">  display:</span></span><br><span class="line"><span class="attr">    position:</span> <span class="string">bottom</span></span><br><span class="line"><span class="attr">    width:</span> <span class="number">150</span></span><br><span class="line"><span class="attr">    height:</span> <span class="number">300</span></span><br><span class="line"><span class="attr">  mobile:</span></span><br><span class="line"><span class="attr">    show:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>最后：<code>hexo g</code> 检查结果</p>
+<h1 id="Live2D"><a href="#Live2D" class="headerlink" title="Live2D:"></a>Live2D:</h1><p><a href="https://www.live2d.com/en/about/whats_live2d" target="_blank" rel="noopener">官网链接 Aboud Live2D</a></p>
+<p>跳过 建模/画每个单帧 过程，直接用2D的图片构建3D的动画。一次画图后，多平台使用。</p>
+<p><img src="/2019/04/20/看板娘/1555762928489.png" alt="1555762928489"></p>
+<p>Live2D是一个可以让你的插画动起来的软件，有主要的两个步骤：制作模型和制作动画。</p>
+<p><strong>编辑器</strong> </p>
+<p>2.0 版本：<a href="http://sites.cybernoids.jp/cubism-editor2/download" target="_blank" rel="noopener">cubism-editor2 </a></p>
+<p>3.0 版本：</p>
+<p>基本教程：</p>
+<p><a href="https://docs.live2d.com/cubism-editor-tutorials/figure/" target="_blank" rel="noopener">Cubism编辑器教程菜单</a> </p>
+<p><a href="https://www.live2d.com/en/support" target="_blank" rel="noopener">总</a></p>
+<p>浏览器：<a href="http://sites.cybernoids.jp/cubism2/tools/live2d-viewer" target="_blank" rel="noopener">view2</a></p>
+<h3 id="查阅："><a href="#查阅：" class="headerlink" title="查阅："></a>查阅：</h3><blockquote>
+<p><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-01" target="_blank" rel="noopener">在游戏/unit3d的安装包中获取live2d的资源</a></p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/04/20/看板娘/" data-id="cjuoyccud0008s4nexdxkmwor" class="article-share-link" data-share="baidu" data-title="看板娘">Share</a>
+        <a data-url="http://yoursite.com/2019/04/20/看板娘/" data-id="cjvnoh0as000a00nef7zhbhn2" class="article-share-link" data-share="baidu" data-title="看板娘">Share</a>
       
 
       
@@ -190,7 +434,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/04/17/think-note/" data-id="cjuoyccu60005s4negxpc8yq1" class="article-share-link" data-share="baidu" data-title="think note">Share</a>
+        <a data-url="http://yoursite.com/2019/04/17/think-note/" data-id="cjvnoh0am000600nejs7i8cwu" class="article-share-link" data-share="baidu" data-title="think note">Share</a>
       
 
       
@@ -259,7 +503,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/04/05/flutter安装/" data-id="cjuoycctn0000s4neem8d5puo" class="article-share-link" data-share="baidu" data-title="flutter安装">Share</a>
+        <a data-url="http://yoursite.com/2019/04/05/flutter安装/" data-id="cjvnoh0ab000200ney04rehd7" class="article-share-link" data-share="baidu" data-title="flutter安装">Share</a>
       
 
       
@@ -312,7 +556,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/03/31/rootme-bash-system1/" data-id="cjuoyccu40004s4nek44uy1wn" class="article-share-link" data-share="baidu" data-title="rootme-bash-system1">Share</a>
+        <a data-url="http://yoursite.com/2019/03/31/rootme-bash-system1/" data-id="cjvnoh0ak000500ne97d2xs99" class="article-share-link" data-share="baidu" data-title="rootme-bash-system1">Share</a>
       
 
       
@@ -450,7 +694,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/03/31/hexo-init/" data-id="cjuoyccu20003s4newnmrmsf8" class="article-share-link" data-share="baidu" data-title="hexo init">Share</a>
+        <a data-url="http://yoursite.com/2019/03/31/hexo-init/" data-id="cjvnoh0ai000400nefwwsbzky" class="article-share-link" data-share="baidu" data-title="hexo init">Share</a>
       
 
       
@@ -496,7 +740,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -508,23 +752,23 @@
       <ul>
         
           <li>
+            <a href="/2019/05/06/AboutSpring/">AboutSpring</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/webpack-sb-problems/">webpack sb problems</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/22/viewports/">viewports</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/20/hexo-MEMO/">hexo-MEMO</a>
           </li>
         
           <li>
             <a href="/2019/04/20/看板娘/">看板娘</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/17/think-note/">think note</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/05/flutter安装/">flutter安装</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/31/rootme-bash-system1/">rootme-bash-system1</a>
           </li>
         
       </ul>
