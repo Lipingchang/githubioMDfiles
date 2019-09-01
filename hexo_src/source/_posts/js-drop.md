@@ -22,6 +22,40 @@ console.log(obj); // { myKey: 'myValue' }
 
 
 
+### 对象的迭代器
+
+`Symbol.iterator` 是对象的迭代器的key, 用这个key就可以设置对象的迭代操作. 
+
+```javascript
+// 不写迭代器的话, 用闭包保存遍历状态
+let movies = {
+  list: [{title: 'aa',}, {title: 'bb',}],
+  [Symbol.iterator]() {
+    let index = 0;
+    return () => {
+      if (index<this.list.length) {
+        return {value: this.list[index++].title, done: false}
+      }
+      return {done: true}
+    }
+  }
+}
+
+// 迭代器
+movies = {
+  list: [{title: 'aa',}, {title: 'bb',}],
+  *[Symbol.iterator]() {
+    for (let i=0; i<this.list.length; i+=1) {
+      yield this.list[i].title;
+    }
+  }
+}
+```
+
+
+
+
+
 
 
 # Hoisting
