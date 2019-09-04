@@ -150,3 +150,106 @@ xsi:schemaLocation 是一个xsi命名空间的属性，定义了该`<bean>`元�
 </bean>
 ```
 
+
+
+# TOOL BOX
+
+## JPA
+
+pom.xml:
+
+```xml
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.hibernate.version>5.0.7.Final</project.hibernate.version>
+    </properties>
+
+    <dependencies>
+        <!-- junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- hibernate对jpa的支持包 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${project.hibernate.version}</version>
+        </dependency>
+
+        <!-- c3p0 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${project.hibernate.version}</version>
+        </dependency>
+
+        <!-- log日志 -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <!-- Mysql and MariaDB -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+    </dependencies>
+```
+
+persistence.xml:
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <!--
+    name:
+        myJpa: 持久化单元名称, crateManageFactory的时候用到
+    type:
+        - JTA: 分布式事务管理, <表在多个主机上>
+        - RESOURCE_LOCAL: 本地事物管理
+    -->
+    <persistence-unit name="myJpa" transaction-type="RESOURCE_LOCAL">
+        <!-- jpa实现方式 -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <!-- 数据库信息 -->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="zucc"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jpa"/>
+            <!-- jpa实现方式(ex: hibernate)的配置信息 -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create" /> <!-- 自动创建表 update/create/none -->
+
+        </properties>
+    </persistence-unit>
+</persistence>
+```
+
+JAVA类:
+
+```java
+import javax.persistence.*;
+
+@Entity
+@Table(name = "cst_customer")
+public class Customer {
+    @Id // 主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // myslq自增, oracle用seq, 或者用auto
+    @Column(name="cust_id") //和表对应
+    private Long custId;
+
+    @Column(name = "cust_name")
+    private String custName;
+    @Column(name = "cust_source")
+    private String custSource;
+}
+```
+
