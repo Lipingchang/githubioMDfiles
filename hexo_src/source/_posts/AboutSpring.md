@@ -205,6 +205,8 @@ pom.xml:
 
 persistence.xml:
 
+**文件要在classpath的 `META-INF` 文件夹里面 ! **
+
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
